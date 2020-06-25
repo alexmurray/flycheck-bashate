@@ -41,12 +41,16 @@
 (flycheck-define-checker bashate
   "A checker using bashate.
 
-See `https://github.com/alexmurray/bashate/'."
+See `https://github.com/openstack/bashate/'."
   :command ("bashate" source)
   :error-patterns ((error line-start "[E] "(message (minimal-match (one-or-more not-newline))) ": '" (one-or-more not-newline) "'\n"
                           " - " (file-name) " : L" line line-end)
                    (warning line-start "[W] "(message (minimal-match (one-or-more not-newline))) ": '" (one-or-more not-newline) "'\n"
-                            " - " (file-name) " : L" line line-end))
+                            " - " (file-name) " : L" line line-end)
+                   (error line-start (file-name) ":" line ":" column ":" " E040"
+                          (message (minimal-match (one-or-more not-newline)) line-end))
+                   (warning line-start (file-name) ":" line ":" column ":" " E"
+                            (message (minimal-match (one-or-more not-newline)) line-end)))
   :modes sh-mode)
 
 ;;;###autoload
