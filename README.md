@@ -4,7 +4,7 @@
 [![MELPA](http://melpa.org/packages/flycheck-bashate-badge.svg)](http://melpa.org/#/flycheck-bashate)
 [![Build Status](https://travis-ci.org/alexmurray/flycheck-bashate.svg?branch=master)](https://travis-ci.org/alexmurray/flycheck-bashate)
 
-Integrate [bashate](https://github.com/alexmurray/bashate) with
+Integrate [bashate](https://github.com/openstack/bashate) with
 [flycheck](http://www.flycheck.org) to automatically check the
 style of your bash scripts on the fly.
 
